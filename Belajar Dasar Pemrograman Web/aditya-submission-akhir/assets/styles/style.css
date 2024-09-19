@@ -105,19 +105,18 @@ article::before {
 
 #content {
     flex: 3;
-    /* Main content takes 3/4 of the space */
+    max-width: 900px; /* Constrain the width for better readability */
+    margin: 0 auto; /* Center the content on larger screens */
+    padding: 0 20px; /* Add padding for spacing */
 }
 
+/* Style for articles */
 #content article {
     margin-bottom: 20px;
-    /* Space between articles */
     padding: 20px;
     background-color: #f9f9f9;
-    /* Light background for articles */
     border: 1px solid #ddd;
-    /* Add light border */
     border-radius: 8px;
-    /* Rounded corners */
 }
 
 /* Center the entire article content */
@@ -161,31 +160,82 @@ article::before {
     margin-bottom: 20px;
 }
 
+
 /* Center the paragraph as well if needed */
 #informasi-umum p {
     text-align: center;
     /* Optional: center the paragraph */
-    font-size: 1.2em;
+    font-size: 1.1em;
     /* Adjust font size for better readability */
     margin-bottom: 20px;
 }
 
-/* Style for the image */
-.informasi-umum-img {
-    display: block;
-    /* Ensure the image is treated as a block element */
-    margin: 0 auto;
-    /* Center the image horizontally */
-    max-width: 100%;
-    /* Ensure the image doesn't overflow the container */
-    height: auto;
-    /* Maintain aspect ratio */
-    border-radius: 8px;
-    /* Optional: rounded corners for the image */
-    margin-top: 20px;
-    /* Add some space above the image */
-    margin-bottom: 20px;
+#tugas-fungsi {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Align text to the left */
+    padding: 20px;
+    max-width: 900px; /* Constrain width for better readability */
+    margin: 0 auto; /* Center the article */
 }
+
+/* Styling for the title */
+#tugas-fungsi h1 {
+    text-align: center; /* Center the text */
+    font-size: 2em; /* Adjust the font size */
+    color: white; /* White text */
+    background-color: #007bff; /* Background color (blue) */
+    display: inline-block; /* Adjust box size to fit content */
+    padding: 10px 20px; /* Add padding inside the box */
+    border-radius: 10px; /* Rounded corners */
+    max-width: 600px; /* Constrain width to prevent it from stretching too much */
+    margin: 0 auto 20px; /* Center the element and add space below */
+}
+
+/* List styling */
+#tugas-fungsi ol {
+    list-style-position: inside;
+    padding-left: 20px;
+    max-width: 800px; /* Constrain the list width */
+    margin: 0 auto;
+}
+
+#tugas-fungsi li {
+    margin-bottom: 15px; /* Add space between list items */
+    font-size: 1.1em; /* Ensure readability */
+    line-height: 1.8; /* Increase line height for better readability */
+}
+
+#tugas-fungsi p {
+    margin-bottom: 20px;
+    font-size: 1.1em; /* Slightly larger font for readability */
+    line-height: 1.8;
+}
+
+.tugas-fungsi-img {
+    display: block; /* Treat the image as a block-level element */
+    margin: 20px auto; /* Center the image horizontally */
+    max-width: 100%; /* Ensure the image doesn't overflow the container */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Optional: Add rounded corners for aesthetic */
+}
+
+/* Bold "Tugas" and "Fungsi" titles */
+.tugas-list li:first-child,
+.tugas-list li:nth-child(2) {
+    font-weight: bold; /* Bold for "Tugas" and "Fungsi" */
+}
+
+/* Ensure the paragraph under the list items is not bold */
+.tugas-list li p {
+    font-weight: normal;
+}
+
+/* Ensure the nested list (Fungsi) is not bold */
+.fungsi-list li {
+    font-weight: normal !important; /* Reset to normal for nested list items */
+}
+
 
 /* Styling for the aside section */
 aside {
