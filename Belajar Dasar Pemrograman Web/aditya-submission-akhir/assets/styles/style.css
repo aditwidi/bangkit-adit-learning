@@ -1,0 +1,208 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    line-height: 1.6;
+}
+
+/* Navbar Styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: white;
+    color: black;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Menambahkan z-index ke logo */
+.logo {
+    z-index: 1001; /* Pastikan logo tidak tertutup menu */
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar ul li {
+    display: inline-block;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: black;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease;
+    font-weight: 500;
+}
+
+.navbar ul li a:hover {
+    background-color: #f0f0f0;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+/* Logo Styling */
+.logo img {
+    max-width: 70px;
+    height: auto;
+    padding-right: 20px;
+    display: block;
+}
+
+/* Styling for the aside section */
+aside {
+    background-color: #f8f8f8; /* Light background for contrast */
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+/* Header inside aside (for title and image) */
+aside header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+aside header h2 {
+    font-size: 1.6em;
+    margin-right: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+aside header img {
+    max-width: 80px;
+    height: auto;
+    border-radius: 50%; /* Circular image for logo */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Section for social media */
+aside section h3 {
+    font-size: 1.4em;
+    margin-bottom: 15px;
+    color: #444;
+}
+
+aside section table {
+    width: 100%; /* Ensure table spans full width */
+    border-collapse: collapse; /* Collapse borders for cleaner look */
+}
+
+aside section table th,
+aside section table td {
+    padding: 10px;
+    text-align: left;
+    font-size: 1em;
+    color: #666;
+}
+
+aside section table th {
+    width: 30%; /* Control column width for labels */
+    font-weight: bold;
+    color: #333;
+}
+
+aside section table td {
+    color: #007bff; /* Make social media handles a clickable color */
+    font-weight: 500;
+}
+
+/* Optional: Add hover effect for social media handles */
+aside section table td:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+
+/* Animation for the navigation menu */
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+}
+
+/* Styling for the hamburger icon */
+.hamburger i {
+    font-size: 24px;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Default: Hide hamburger menu on larger screens */
+.hamburger {
+    display: none;
+}
+
+/* Responsive Styling for Mobile and Tablet */
+@media (max-width: 768px) {
+    /* Show hamburger menu */
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+
+    /* Hide navigation links */
+    .navbar ul {
+        display: none;
+        flex-direction: column;
+        background-color: white;
+        position: absolute;
+        top: 3.5rem; /* Below the header */
+        right: 0;
+        width: 100%;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        opacity: 0;
+        padding: 20px;
+        transform: translateY(-100%);
+        transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    }
+
+    /* Show navigation with animation */
+    .navbar ul.active {
+        display: flex;
+        opacity: 1;
+        transform: translateY(0);
+        animation: slideDown 0.5s forwards; /* Smoother slide-down */
+    }
+
+    /* Animation for hiding the menu */
+    .navbar ul.inactive {
+        animation: slideUp 0.5s forwards; /* Smoother slide-up */
+    }
+
+    /* Toggle to close (X) icon when active */
+    .hamburger.active i {
+        content: '\f00d'; /* Change to 'X' (fa-times) */
+    }
+}
